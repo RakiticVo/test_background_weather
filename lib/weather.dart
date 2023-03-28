@@ -1,0 +1,5 @@
+class Weather {
+  void getWeather(){
+
+  }
+}
