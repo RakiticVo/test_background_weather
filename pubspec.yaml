@@ -38,7 +38,7 @@ dependencies:
   geolocator: ^9.0.2
   weather: ^2.0.1
   intl: ^0.18.0
-
+  location: ^4.4.0
 
 dev_dependencies:
   flutter_test:

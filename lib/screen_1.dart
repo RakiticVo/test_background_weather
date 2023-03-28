@@ -19,7 +19,7 @@ class _Screen1State extends State<Screen1> {
   Weather? weather;
   Position? currentPosition;
 
-  List<String> cities = ['Brisbane', 'Toronto', 'Toulouse', 'Swansea', 'Hanoi', 'Osaka', 'Vik', 'Boston'];
+  List<String> cities = ['Brisbane', 'Toronto', 'Toulouse', 'Swansea', 'Hanoi', 'Osaka', 'Vik', 'Boston', 'Ho Chi Minh City', 'Mandalay', 'Wellington', 'Tokyo', 'Apia'];
   int count = -1;
 
   @override
@@ -55,7 +55,7 @@ class _Screen1State extends State<Screen1> {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Screen2(weather: weather!, isDarkTheme: _isDarkTheme()),));
                         },
                         color: Colors.black,
-                        child: Text(
+                        child: const Text(
                           'Next screen',
                           style: TextStyle(
                               fontSize: 20.0,
@@ -72,7 +72,7 @@ class _Screen1State extends State<Screen1> {
                           });
                         },
                         color: Colors.black,
-                        child: Text(
+                        child: const Text(
                           'Random City Weather',
                           style: TextStyle(
                               fontSize: 20.0,
@@ -111,7 +111,7 @@ class _Screen1State extends State<Screen1> {
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
     }
-    currentPosition = await Geolocator.getCurrentPosition();
+    currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.bestForNavigation);
     setState(() {
       _getWeather();
     });
@@ -127,11 +127,8 @@ class _Screen1State extends State<Screen1> {
   }
 
   _isDarkTheme(){
-    if(weather!.weatherDescription == 'few clouds'
-        || weather!.weatherDescription == 'scattered clouds'
-        || weather!.weatherDescription == 'broken clouds'
-        || weather!.weatherDescription == 'overcast clouds'
-        || weather!.weatherDescription == 'mist'
+    if(weather!.weatherDescription == 'snow'
+        || weather!.weatherDescription == 'light snow'
     ) {
       return false;
     }else{

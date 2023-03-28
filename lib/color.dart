@@ -17,6 +17,8 @@ class AppColor {
         return AppColor().cloud;
       case 'shower rain':
         return AppColor().heavyRain;
+      case 'moderate rain':
+        return AppColor().heavyRain;
       case 'rain':
         return AppColor().rain;
       case 'light rain':
@@ -25,7 +27,11 @@ class AppColor {
         return AppColor().heavyRain;
       case 'snow':
         return AppColor().snow;
+      case 'light snow':
+        return AppColor().snow;
       case 'mist':
+        return AppColor().cloud;
+      case 'haze':
         return AppColor().cloud;
       default:
         return AppColor().defaultTheme;
@@ -37,12 +43,6 @@ class AppColor {
     end: Alignment.bottomCenter,
     colors: [Color(0xff966cc3), Color(0xffcba1ab), Color(0xfffecc93)],
   );
-
-// LinearGradient get beforeSunRise => const LinearGradient(
-//   begin: Alignment.topCenter,
-//   end: Alignment.bottomCenter,
-//   colors: [Color(0xff766bcb), Color(0xffc184c8), Color(0xfffa99c5)],
-// );
 
   LinearGradient get heavyRain => const LinearGradient(
     begin: Alignment.topCenter,
@@ -65,7 +65,7 @@ class AppColor {
   LinearGradient get cloud => const LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [Color(0xffd1d1d1), Color(0xffffffff)],
+    colors: [Color(0xff777676), Color(0xffd1d1d1), Color(0xffffffff)],
   );
 
   LinearGradient get defaultTheme => const LinearGradient(
